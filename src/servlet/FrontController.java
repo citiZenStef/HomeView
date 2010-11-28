@@ -17,10 +17,10 @@ public class FrontController extends HttpServlet {
 	
 	// parameters shared with login.jsp.  These must exactly match the 
     // property names in the JSP.
-    public static final String USERNAME_PARAM = "username";
+ /*   public static final String USERNAME_PARAM = "username";
     public static final String PASSWORD_PARAM = "password";
     public static final String USERBEAN_ATTR = "userbean";
-    
+*/    
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -62,8 +62,9 @@ public class FrontController extends HttpServlet {
 		
 		System.out.println("uri début: " + uri);
 		
-		//vérifier si l'usager est connecté ---> implémentation d'un UserBean
-		HttpSession session = request.getSession(true);
+		page = LogginController.process(request, response);
+		
+/*		HttpSession session = request.getSession(true);
 		UserBean userBean = (UserBean) session.getAttribute(USERBEAN_ATTR);
         
         if (userBean == null || !userBean.isLoggedIn()) {
@@ -92,7 +93,7 @@ public class FrontController extends HttpServlet {
             else {
             	page = "testPage.jsp";
             }
-        }
+        }*/
         
         if(uri.matches(".*/image")) {
 			page = ImageController.process(request,response);

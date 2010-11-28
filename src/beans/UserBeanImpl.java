@@ -32,7 +32,7 @@ public class UserBeanImpl implements UserBean {
      * password validity.
      */
     public boolean doLogin() {
-        if (password.equals("empereur") && username.equals("stef")) {
+    	if ("empereur".equals(password) && "stef".equals(username)) {
         	setLoggedIn(true);
         }        
         return isLoggedIn();
