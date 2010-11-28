@@ -1,6 +1,6 @@
 package servlet;
 
-import controllers.ImageController;
+import controllers.*;
 import beans.*;
 
 import java.io.IOException;
