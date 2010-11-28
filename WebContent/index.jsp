@@ -5,7 +5,7 @@
 <head><title>Loggin</title></head>
 <body>
 <br><br>
-<form action="loggin" method="post">
+<form action="image" method="post">
 Username: <input type="text" name="username"
                  value=<jsp:getProperty name="userbean" property="username"/>>
 <br>

@@ -15,7 +15,7 @@ public class LogginController {
     public static final String USERBEAN_ATTR = "userbean";
     
 	public static String process(HttpServletRequest request, HttpServletResponse response) {
-		String page = null;
+		String page = "index.jsp";
 		HttpSession session = request.getSession(true);
 		UserBean userBean = (UserBean) session.getAttribute(USERBEAN_ATTR);
         
@@ -41,6 +41,9 @@ public class LogginController {
             // if we failed, redirect to the login page
             if (!result) {
                 page = "index.jsp";
+            }
+            else {
+            	page = "testPage.jsp";
             }
         }
         

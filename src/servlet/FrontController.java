@@ -63,37 +63,6 @@ public class FrontController extends HttpServlet {
 		System.out.println("uri début: " + uri);
 		
 		page = LogginController.process(request, response);
-		
-/*		HttpSession session = request.getSession(true);
-		UserBean userBean = (UserBean) session.getAttribute(USERBEAN_ATTR);
-        
-        if (userBean == null || !userBean.isLoggedIn()) {
-            // read request parameters
-            String username = request.getParameter(USERNAME_PARAM);
-            String password = request.getParameter(PASSWORD_PARAM);
-            
-            // if the userbean doesn't exists, create it
-            if (userBean == null) {
-                userBean = UserBeanFactory.newInstance();
-                session.setAttribute(USERBEAN_ATTR, userBean);
-            }
-            
-            // record the username and password values
-            userBean.setUsername(username);
-            userBean.setPassword(password);
-            
-            // attempt to login
-            boolean result = userBean.doLogin();
-            System.out.println(result);
-            
-            // if we failed, redirect to the login page
-            if (!result) {
-                page = "index.jsp";
-            }
-            else {
-            	page = "testPage.jsp";
-            }
-        }*/
         
         if(uri.matches(".*/image")) {
 			page = ImageController.process(request,response);
