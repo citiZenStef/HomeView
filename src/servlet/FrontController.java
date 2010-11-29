@@ -1,7 +1,6 @@
 package servlet;
 
 import controllers.*;
-import beans.*;
 
 import java.io.IOException;
 
@@ -14,13 +13,7 @@ import javax.servlet.http.*;
  * Servlet implementation class FrontController
  */
 public class FrontController extends HttpServlet {
-	
-	// parameters shared with login.jsp.  These must exactly match the 
-    // property names in the JSP.
- /*   public static final String USERNAME_PARAM = "username";
-    public static final String PASSWORD_PARAM = "password";
-    public static final String USERBEAN_ATTR = "userbean";
-*/    
+ 
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -62,9 +55,10 @@ public class FrontController extends HttpServlet {
 		
 		System.out.println("uri début: " + uri);
 		
+		//page will later be changed in case of uri match, except for the case it returns index.jsp (login failed)
 		page = LogginController.process(request, response);
         
-        if(uri.matches(".*/image")) {
+        if(uri.matches(".*/image") && !page.equals("index.jsp")) {
 			page = ImageController.process(request,response);
 		}
 		
