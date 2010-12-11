@@ -5,11 +5,11 @@
 <head><title>Loggin</title></head>
 <body>
 <br><br>
-<form action="image" method="post">
+<form action="" method="post">
 Username: <input type="text" name="username"
                  value=<jsp:getProperty name="userbean" property="username"/>>
 <br>
-Password: <input type="text" name="password"><br>
+Password: <input type="password" name="password"><br>
 <input type="submit" value="Log In">
 </form>
 </body>

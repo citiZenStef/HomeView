@@ -9,6 +9,7 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+
 /**
  * Servlet implementation class FrontController
  */
@@ -57,8 +58,8 @@ public class FrontController extends HttpServlet {
 		
 		//page will later be changed in case of uri match, except for the case it returns index.jsp (login failed)
 		page = LogginController.process(request, response);
-        
-        if(uri.matches(".*/image") && !page.equals("index.jsp")) {
+		
+        if(uri.matches(".*/image/*.") && !page.equals("index.jsp")) {
 			page = ImageController.process(request,response);
 		}
 		

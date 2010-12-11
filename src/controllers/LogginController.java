@@ -43,12 +43,12 @@ public class LogginController {
                 page = "index.jsp";
             }
             else {
-            	page = "testPage.jsp";
+            	page = "error.jsp";
             }
         }
         
         else {
-        	page = "testPage.jsp";
+        	page = "error.jsp";
         }
         
         return page;
